@@ -1,7 +1,7 @@
 {
   "name": "multer-object-storage",
   "description": "Multer storage engine for storing files to either S3-compatible object storage or disk with sopport for image resizing.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "built/index.js",
   "license": "MIT",
   "author": {
