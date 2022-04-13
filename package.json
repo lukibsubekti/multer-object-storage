@@ -1,8 +1,12 @@
 {
   "name": "multer-object-storage",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "built/index.js",
   "license": "MIT",
+  "author": {
+    "name": "Luki B. Subekti",
+    "email": "lukibsubekti@gmail.com"
+  },
   "scripts": {
     "lint": "eslint ./src --ext .js,.ts --fix",
     "tsc": "tsc",

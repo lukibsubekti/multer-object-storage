@@ -1,3 +1,5 @@
+// to run this example, first you must install the dependencies and set a .env file
+
 require('dotenv').config();
 const express = require('express');
 const multer  = require('multer')
@@ -21,7 +23,7 @@ const storage = new ObjectStorage({
   // by default it is set to "uploads/" relative to the project directory
   // set to null if you don't want to store files on disk
   destination: function (req, file, cb) {
-    cb(null, null);
+    cb(null, 'uploads/');
   },
 
   // optional: set list of image resize options, based on Sharp resize options
@@ -57,10 +59,10 @@ const storage = new ObjectStorage({
 const upload = multer({ storage });
 
 // set to allow 5 fields with name "image" and 2 fields with name "file"
-const cpUpload = upload.fields([{ name: 'image', maxCount: 5 }, { name: 'file', maxCount: 2 }]);
+const uploadHandler = upload.fields([{ name: 'image', maxCount: 5 }, { name: 'file', maxCount: 2 }]);
 
 // send a multipart form-data that contain files here
-app.post('/upload', cpUpload, (req, res) => {
+app.post('/upload', uploadHandler, (req, res) => {
   res.json(req.files);
 });
 
