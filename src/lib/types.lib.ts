@@ -1,7 +1,7 @@
 import { Request } from 'express';
 import { ResizeOptions } from 'sharp';
 
-export const imageMimeTypes = ['image/png', 'image/jpg', 'image/jpeg'];
+export const imageMimeTypes = ['image/png', 'image/jpeg', 'image/webp'];
 
 /**
  * Function that calls a callback that contains destination information

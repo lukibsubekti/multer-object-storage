@@ -70,7 +70,7 @@ and keep the storage to be flexible and customisable.
     });
     ```
 - `bucket`: `(req: express.Request, file: Express.Multer.File, cb: (err, result) => void) => void`
-    By default, it is `null` that means the storage won't store the file to any S3-compatible storage.
+    By default, its result is `null` that means the storage won't store the file to any S3-compatible storage.
     Example:
     ```javascript
     const storage = new ObjectStorage({
@@ -86,9 +86,9 @@ and keep the storage to be flexible and customisable.
     });
     ```
 - `resize`: `(req: express.Request, file: Express.Multer.File, cb: (err, result) => void) => void`
-    By default, it is `null` that means the storage won't resize any **image** files.
+    By default, its result is `null` that means the storage won't resize any **image** files.
     This parameter only affects image files. If non-image file is passed, the storage won't apply any resizing process to that file.
-    Currently, an image file is a file with Mime-Type `image/jpeg` or `image/png`.
+    Currently, an image file is a file with Mime-Type `image/jpeg`, `image/png`, or `image/webp`.
     Example:
     ```javascript
     const storage = new ObjectStorage({

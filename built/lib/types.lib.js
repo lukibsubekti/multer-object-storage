@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ObjectStorageError = exports.ObjectStorageErrorCode = exports.imageMimeTypes = void 0;
-exports.imageMimeTypes = ['image/png', 'image/jpg', 'image/jpeg'];
+exports.imageMimeTypes = ['image/png', 'image/jpeg', 'image/webp'];
 var ObjectStorageErrorCode;
 (function (ObjectStorageErrorCode) {
     ObjectStorageErrorCode["STORE_STREAM"] = "store_stream";

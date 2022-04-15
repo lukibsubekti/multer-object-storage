@@ -19,9 +19,9 @@ const storage = new ObjectStorage({
     );
   },
 
-  // optional: set destination directory for disk saving, 
-  // by default it is set to "uploads/" relative to the project directory
-  // set to null if you don't want to store files on disk
+  // optional: set destination directory for disk storing, 
+  // by default its result is set to "uploads/" relative to the project directory
+  // set it to null if you don't want to store files on disk
   destination: function (req, file, cb) {
     cb(null, 'uploads/');
   },
@@ -29,15 +29,18 @@ const storage = new ObjectStorage({
   // optional: set list of image resize options, based on Sharp resize options
   resize: function (req, file, cb) {
     cb(null, {
-      mimeTypes: ['image/jpg', 'image/jpeg', 'image/png'], // set allowed image mime-types that can be resized
+      // set allowed image mime-types that can be resized
+      mimeTypes: ['image/jpeg', 'image/png'], 
       options: [
         {
           width: 200,
           height: 150,
-          fileNameTail: 'thumb', // by default, file name will be appended by text with format "w{width}-h{height}"
+          // by default, file name will be appended by string with format "w{width}-h{height}"
+          // you can set custom postfix here
+          fileNameTail: 'thumb', 
         },
         {
-          width: 300, // height will auto based on image ratio
+          width: 300, // height will be auto based on image ratio
         },
       ],
     });
@@ -55,13 +58,13 @@ const storage = new ObjectStorage({
   },
 });
 
-// init upload middleware using multer
+// set object storage option in the multer initiation
 const upload = multer({ storage });
 
-// set to allow 5 fields with name "image" and 2 fields with name "file"
+// allows 5 fields with name "image" and 2 fields with name "file"
 const uploadHandler = upload.fields([{ name: 'image', maxCount: 5 }, { name: 'file', maxCount: 2 }]);
 
-// send a multipart form-data that contain files here
+// send a multipart form-data that contains files to this endpoint
 app.post('/upload', uploadHandler, (req, res) => {
   res.json(req.files);
 });
