@@ -212,3 +212,5 @@ export class ObjectStorage {
 export const objectStorage = (options: ObjectStorageOptions) => {
   return new ObjectStorage(options);
 };
+
+export type ObjectStorageFile = CallbackObject;

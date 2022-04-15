@@ -11,3 +11,4 @@ export declare class ObjectStorage {
     _removeFile(req: Request, file: Express.Multer.File, cb: (error: Error, file?: any) => void): void;
 }
 export declare const objectStorage: (options: ObjectStorageOptions) => ObjectStorage;
+export declare type ObjectStorageFile = CallbackObject;
