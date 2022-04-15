@@ -13,6 +13,7 @@ import {
   ObjectStorageResize,
   ProcessObject,
   StoreImageResultItem,
+  CallbackResizeObject,
 } from './lib/types.lib';
 import {
   getCallbackObject,
@@ -213,4 +214,13 @@ export const objectStorage = (options: ObjectStorageOptions) => {
   return new ObjectStorage(options);
 };
 
-export type ObjectStorageFile = CallbackObject;
+export interface ObjectStorageFile {
+  destination: string;
+  filename: string;
+  size: number;
+  path: string;
+  url: string;
+  width?: number;
+  height?: number;
+  resize?: CallbackResizeObject[];
+}
