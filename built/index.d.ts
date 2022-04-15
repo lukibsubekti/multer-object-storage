@@ -12,6 +12,10 @@ export declare class ObjectStorage {
 }
 export declare const objectStorage: (options: ObjectStorageOptions) => ObjectStorage;
 export interface ObjectStorageFile {
+    fieldname: string;
+    originalname: string;
+    encoding: string;
+    mimetype: string;
     destination: string;
     filename: string;
     size: number;

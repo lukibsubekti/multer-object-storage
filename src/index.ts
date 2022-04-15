@@ -215,6 +215,10 @@ export const objectStorage = (options: ObjectStorageOptions) => {
 };
 
 export interface ObjectStorageFile {
+  fieldname: string;
+  originalname: string;
+  encoding: string;
+  mimetype: string;
   destination: string;
   filename: string;
   size: number;
